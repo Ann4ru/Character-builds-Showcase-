@@ -4,22 +4,29 @@
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
 function SearchBar({ searchText, setSearchText, onSearch }) {
-  return (
-    <Row className="mb-4 g-2">
-      <Col md={8}>
-        <Form.Control
-          type="text"
-          placeholder="Search products..."
-          value={searchText} // Value controlled by state
-          onChange={(e) => setSearchText(e.target.value)} // Update state when something is typed
-        />
-      </Col>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch();
+  };
 
-      <Col md={2}>
-        <Button className="w-100" onClick={onSearch}>Search</Button>
-      </Col>
-      
-    </Row>
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Row className="mb-4 g-2">
+        <Col xs={12} md={9}>
+          <Form.Control
+            type="text"
+            placeholder="Search products..."
+            aria-label="Search products"
+            value={searchText} // Value controlled by state
+            onChange={(e) => setSearchText(e.target.value)} // Update state when something is typed
+          />
+        </Col>
+
+        <Col xs={12} md={3}>
+          <Button type="submit" className="w-100">Search</Button>
+        </Col>
+      </Row>
+    </Form>
   );
 }
 

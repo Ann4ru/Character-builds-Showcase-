@@ -41,8 +41,14 @@ function Products() {
     // Checks if any of the products titles has a correspondence with the input in the search bar
     // Gives back the filtered array of products > no corresponding titles > show message
     const handleSearch = () => {
+        const query = searchText.trim().toLowerCase();
+        if (!query) {
+            setProducts(allProducts);
+            return;
+        }
+
         const filteredProducts = allProducts.filter((product) =>
-            product.title.toLowerCase().includes(searchText.toLowerCase())
+            product.title.toLowerCase().includes(query)
         );
 
         setProducts(filteredProducts);
@@ -50,7 +56,7 @@ function Products() {
 
     return (
         <Container className="py-4">
-            <div className='text-align-center'>
+            <div className='text-center'>
                 <div className="text-center mb-4">
                     <h1>Very-random-items shop</h1>
                     <p>(Seriously, make-up and chicken?)</p>
