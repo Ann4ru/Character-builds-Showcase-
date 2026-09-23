@@ -1,0 +1,13 @@
+.product-card {
+  border-radius: 10px;
+}
+
+.product-image {
+  height: 280px;
+  object-fit: cover;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #120713;
+}
