@@ -13,7 +13,7 @@ Typing in `SearchBar` updates `searchText` live (the visible list re-derives on 
 - Filters: within one group selections combine with OR (element ice OR wind); across groups with AND; the search query ANDs with all filters. An empty group constrains nothing.
 - Group-to-field mapping: `paths→path`, `elements→element`, `rarities→rarity`, `ratings→overallRating`, `roles→role`. Option lists derive from the JSON `enums`, so enum changes never require UI edits.
 - Combined example: query `a` + role `sustain` matches only sustain characters whose name contains "a".
-- Panel: collapsed by default behind a `Filters` toggle button (`aria-expanded`); shows a count badge (`Filters (3)`) when selections exist; expands to one checkbox group per enum key (`Path`, `Element`, `Rarity`, `Tier`, `Role`); `Clear all` resets every group.
+- Panel: icon-only filter button (☰, `aria-label="Open filters"`, `aria-expanded`) with a count badge when selections exist; opens a left `Offcanvas` overlay drawer (backdrop click, Escape, and close-button dismiss) with left-aligned `Accordion` sections — one per enum key (`Path`, `Element`, `Rarity`, `Tier`, `Role`); `Clear all` resets every group. Element/path options show icons (`elementIconUrl`/`pathIconUrl`) with text fallback on 404.
 - Zero matches → the shared empty state: neutral `Alert` `No characters found`.
 
 ## Accessibility and layout
@@ -21,6 +21,6 @@ Typing in `SearchBar` updates `searchText` live (the visible list re-derives on 
 - Input has `placeholder="Search characters..."` and `aria-label="Search characters"`.
 - Submit button is `type="submit"` inside `<Form onSubmit>` (Enter works, no page reload via `preventDefault`).
 - Row: input `Col xs=12 md=9`, button `Col xs=12 md=3` (stacks on mobile).
-- Filter checkboxes are real `Form.Check` inputs with labels; toggle button carries `aria-expanded`.
+- Filter checkboxes are real `Form.Check` inputs with labels inside the drawer `Accordion`; trigger button carries `aria-label="Open filters"` + `aria-expanded`; decorative option icons use `alt=""` + `aria-hidden` so screen readers hear only the value text.
 
 Source: `src/data/characterFilters.js` (`matchesQuery`, `matchesFilters`, `applyFilters`), `src/components/Characters.jsx`, `src/components/SearchBar.jsx`, `src/components/FilterPanel.jsx`.

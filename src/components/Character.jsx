@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { elementIconUrl, rarityStars } from '../data/hsrAssets';
+import { elementIconUrl, pathIconUrl, rarityStars } from '../data/hsrAssets';
 
 function Character({ character, onSelect }) {
   const [imgError, setImgError] = useState(false);
@@ -47,6 +47,8 @@ function Character({ character, onSelect }) {
                 src={elementIconUrl(character.element)}
                 alt={character.element}
                 loading="lazy"
+                width={20}
+                height={20}
               />
               {' '}{character.element}
             </>
@@ -55,7 +57,23 @@ function Character({ character, onSelect }) {
           )}
         </Card.Text>
 
-        <Card.Text className="mb-1">{character.path}</Card.Text>
+        <Card.Text className="mb-1">
+          {character.path ? (
+            <>
+              <img
+                src={pathIconUrl(character.path)}
+                alt={character.path}
+                loading="lazy"
+                width={20}
+                height={20}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+              {' '}{character.path}
+            </>
+          ) : (
+            <span className="text-muted">No data yet</span>
+          )}
+        </Card.Text>
 
         <Card.Text className="mb-0">
           {rarityStars(character.rarity)}{' '}{character.rarity}

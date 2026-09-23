@@ -1,7 +1,7 @@
 // detail modal for a single character, opened from the Characters grid
 
 import { Modal, Badge, ListGroup } from 'react-bootstrap';
-import { elementIconUrl, rarityStars } from '../data/hsrAssets';
+import { elementIconUrl, pathIconUrl, rarityStars } from '../data/hsrAssets';
 
 const asArray = (v) => {
   if (!v) return [];
@@ -70,7 +70,20 @@ function CharacterModal({ character, onClose }) {
             ) : (
               <span className="text-muted">No data yet</span>
             )}
-            {character.path ? <Badge bg="secondary" className="modal-badge">{character.path}</Badge> : <span className="text-muted">No data yet</span>}
+            {character.path ? (
+              <Badge bg="secondary" className="modal-badge">
+                <img
+                  src={pathIconUrl(character.path)}
+                  alt={character.path}
+                  loading="lazy"
+                  width={16}
+                  height={16}
+                  className="me-1"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+                {character.path}
+              </Badge>
+            ) : <span className="text-muted">No data yet</span>}
             {character.rarity ? (
               <Badge bg="secondary" className="modal-badge">{`${rarityStars(character.rarity)} ${character.rarity}`}</Badge>
             ) : (

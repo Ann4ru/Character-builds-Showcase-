@@ -15,9 +15,27 @@
 
 .character-card {
   cursor: pointer;
+  border-radius: 16px;
+  border: 3px solid var(--border);
+  background: var(--surface);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.45);
+  transition: transform 120ms;
 }
 .character-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+.character-card .card-title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.filter-icon-btn {
+  border-radius: 999px;
+  border-width: 3px;
+  font-size: 20px;
+  line-height: 1;
+}
+.offcanvas {
+  background: var(--surface);
 }
 .character-card.rarity-5 {
   border-color: #d4af37;

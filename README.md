@@ -53,12 +53,12 @@ src/
     Characters.jsx          # container: load, search/filter/modal state, loading/error/empty UI
     Character.jsx           # single Bootstrap card (thumbnail, name, element, path, rarity)
     CharacterModal.jsx      # detail modal (build, teams, sources)
-    FilterPanel.jsx         # collapsible checkbox sidebar
+    FilterPanel.jsx         # icon-button filter drawer (Offcanvas + Accordion)
     SearchBar.jsx           # controlled input + submit; Enter key supported
   data/
     CharacterRepository.js  # repository seam: CharacterRepository base + JsonCharacterRepository
     characterFilters.js     # pure search/filter predicate (matchesQuery/matchesFilters/applyFilters)
-    hsrAssets.js            # elementIconUrl + rarityStars helpers
+    hsrAssets.js            # elementIconUrl + pathIconUrl + rarityStars helpers
 tests/
   characterFilters.test.js  # predicate semantics (OR/AND, trim, case, empty)
   characterRepository.test.js  # JSON adapter returns bundled array

@@ -10,11 +10,11 @@ Single-page Honkai: Star Rail character browser: load the bundled 90-character r
 App (src/App.jsx)
  └─ Characters (src/components/Characters.jsx) — container
      ├─ SearchBar (src/components/SearchBar.jsx) — controlled input
-     ├─ FilterPanel (src/components/FilterPanel.jsx) — collapsible checkbox sidebar
+      ├─ FilterPanel (src/components/FilterPanel.jsx) — icon-button filter drawer (Offcanvas + Accordion)
      ├─ Character[] (src/components/Character.jsx) — presentational card
      └─ CharacterModal (src/components/CharacterModal.jsx) — detail modal
 Data: CharacterRepository (src/data/CharacterRepository.js) ← JsonCharacterRepository (bundled JSON)
-Pure logic: characterFilters.js (matchesQuery/matchesFilters/applyFilters), hsrAssets.js (elementIconUrl/rarityStars)
+Pure logic: characterFilters.js (matchesQuery/matchesFilters/applyFilters), hsrAssets.js (elementIconUrl/pathIconUrl/rarityStars)
 Tooling: scripts/sync-hsr.mjs (npm run sync:hsr, manual build-time sync)
 ```
 
@@ -22,7 +22,7 @@ Tooling: scripts/sync-hsr.mjs (npm run sync:hsr, manual build-time sync)
 |---|---|---|
 | `Characters` | Loads via `repository.getAll()`; owns `allCharacters`, `searchText`, `filters`, `selected`, `loading`, `err`; derives `visible` with `useMemo`; renders loading/error/empty gates, result count, grid, modal | Render card/modal internals, own input DOM, filter state into itself |
 | `SearchBar` | Controlled `Form.Control` (`value`/`onChange`), `<Form onSubmit>` → `onSearch()` | Filter, fetch, hold character data |
-| `FilterPanel` | Collapsible sidebar; checkbox group per enum key; `Filters (N)` count badge; `Clear all` reset | Filter, fetch; hardcode option lists (derives them from `enums`) |
+| `FilterPanel` | Icon-only filter button (`aria-label="Open filters"`) opening a left `Offcanvas` drawer; left-aligned `Accordion` with one section per enum key; element/path option icons; count badge; `Clear all` reset | Filter, fetch; hardcode option lists (derives them from `enums`) |
 | `Character` | Render `Card` from `character` prop (thumbnail, name, element icon+label, path, rarity stars); clickable + keyboard-accessible (`role=button`, `tabIndex`, Enter/Space); image `onError` fallback | Fetch, filter, manage state |
 | `CharacterModal` | Render Bootstrap `Modal size="lg"` from `character` prop (header badges, build, teams, sources); null/empty-safe placeholders | Fetch, filter, manage selection state |
 
@@ -43,7 +43,7 @@ Flow:
 2. `visible = useMemo(() => applyFilters(allCharacters, searchText, filters), [allCharacters, searchText, filters])` — derived, never stored.
 3. Render gates: spinner + `Loading characters...` if `loading`; danger `Alert` if `err`; neutral `Alert` `No characters found` if `!loading && !err && visible.length === 0`; grid only if `!loading && !err`.
 4. Selection: card `onSelect` → `setSelected(character)`; modal `onClose` → `setSelected(null)`.
-5. Filter option lists derive from the JSON `enums` (`paths`, `elements`, `rarities`, `ratings`, `roles`), so enum changes never require UI edits. Element icons derive from the `element` value (`https://sunderarmor.com/STARRAIL/Elements/<element>_sm.png`).
+5. Filter option lists derive from the JSON `enums` (`paths`, `elements`, `rarities`, `ratings`, `roles`), so enum changes never require UI edits. Element and path icons derive from the `element`/`path` values (`elementIconUrl`/`pathIconUrl` in `hsrAssets.js`, sunderarmor CDN); a 404 hides the icon so the text label remains.
 
 Invariant: search/filter always reads `allCharacters`, never the visible list.
 
@@ -62,11 +62,11 @@ Group-to-field mapping: `paths→path`, `elements→element`, `rarities→rarity
 ## Rendering and style
 
 - Layout: `Container fluid py-4`, header `text-center` (`Star Rail Character Library` + `X of 90 characters` count), `Row` with sidebar `Col md=3` + content `Col md=9`.
-- Filter toggle: `Filters` button with `aria-expanded` and a count `Badge` when selections exist; expands to checkbox groups (`Path`, `Element`, `Rarity`, `Tier`, `Role`) plus `Clear all`.
+- Filter drawer: icon-only filter button (`aria-label="Open filters"`, `aria-expanded`) with a count `Badge` when selections exist; opens a left `Offcanvas` drawer (backdrop/Escape/close-button dismiss) with left-aligned `Accordion` sections (`Path`, `Element`, `Rarity`, `Tier`, `Role`) plus `Clear all`. Element/path checkbox labels show icons (`elementIconUrl`/`pathIconUrl`) with text fallback on 404.
 - Search row: `Form > Row.mb-4.g-2`, `Col xs=12 md=9` input + `Col xs=12 md=3` submit button (`type="submit"`, `w-100`).
-- Cards: `Card.h-100.character-card.shadow-sm` with `rarity-5` (gold `#d4af37`) / `rarity-4` (purple `#9b7ede`) border, `Card.Img.character-image` (`height: 280px; object-fit: cover; loading="lazy"`), hover lift, rarity as `★★★★★` / `★★★★`.
+- Cards: `Card.h-100.character-card.shadow-sm` with `rarity-5` (gold `#d4af37`) / `rarity-4` (purple `#9b7ede`) border; cartoon rules — 16px radius, 3px border, hard offset shadow (`4px 4px 0`), hover lift+tilt; element and path rows show icon+label; `Card.Img.character-image` (`height: 280px; object-fit: cover; loading="lazy"`), rarity as `★★★★★` / `★★★★`.
 - Modal: `size="lg"`; header with 64px thumbnail, name, badges (element with icon, path, rarity stars, role, tier); body sections Light Cones / Relics & Ornaments / Stats (Body/Feet/Sphere/Rope + Sub Stats) / Teams (up to 3); footer with `sources` links. Null/empty fields render muted `No data yet` (`No team data yet` for teams).
-- Theme: CSS variables in `src/index.css` (`--text`, `--bg`, `--accent`, dark-mode via `prefers-color-scheme`), `#root` centered max-width 1126px. All `@media` queries are top-level (no CSS nesting).
+- Theme: forced-dark pink tokens in `src/index.css` (`--bg #16171d`, `--surface #1f2028`, `--text #f3f4f6`, `--accent #ff4d8d`, `color-scheme: dark`), `#root` centered max-width 1126px. All `@media` queries are top-level (no CSS nesting).
 
 ## External contract
 
