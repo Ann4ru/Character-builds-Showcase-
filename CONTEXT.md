@@ -1,10 +1,23 @@
 # CONTEXT.md — current state of character-showcase
 
-Last updated: 2026-09-23. Update this file whenever behavior, API, or structure changes.
+Last updated: 2026-09-23 (HSR rework: spec + data pass; code untouched). Update this file whenever behavior, API, or structure changes.
 
 ## What this is
 
-React 19 + Vite 8 + Bootstrap 5 product browser against `https://dummyjson.com/products`. See `README.md` for setup, `ARCHITECTURE.md` for design.
+React 19 + Vite 8 + Bootstrap 5 app pivoting from a dummyjson product browser to a **Honkai: Star Rail character showcase**. Live code is still the products version; the rework design is specified in `docs/superpowers/specs/2026-09-23-hsr-showcase-design.md` (draft, awaiting user review). See `README.md` for setup, `ARCHITECTURE.md` for the current (products) design.
+
+## HSR rework — decisions locked 2026-09-23 (Q&A)
+
+- Thumbnails: hotlink genshin.gg (`sunderarmor.com/STARRAIL/...`), not downloaded.
+- Data enriched before spec: JSON is now schema 1.1, 90 characters, `rarity` added (67× `5-star`, 23× `4-star`), all 90 `image` fields filled from the live roster page, `overallRating` kept as editorial.
+- Sync: build-time `npm run sync:hsr` script (no runtime fetching — CORS + JS-rendered pages rule that out).
+- DB seam: `CharacterRepository` interface + JSON adapter now, real-DB adapter later.
+- Detail view: react-bootstrap `Modal` (`size="lg"`), structure defined in the spec.
+
+## Mock database (`src/assets/hsr_character_library_starter.json`, still untracked)
+
+- Schema 1.1, `lastChecked: 2026-09-23`, enums for elements/paths/ratings/roles/rarity/stats.
+- Known issues for implementation: live roster has `Black Swan` + `Bronya` (absent here — sync script adds them as stubs); genshin.gg spells `Boothill` as `Boothiill` (alias map); several entries have empty `bestTeams` and mixed `mainStats` shapes (string vs array — UI must tolerate both).
 
 ## What works now (verified 2026-09-23)
 
@@ -25,12 +38,14 @@ Root causes were scaffold leftovers (Vite template CSS nesting, template title, 
 
 ## Naming drift (do not "fix" silently)
 
-- Folder: `character-showcase`. Package (`package.json`): `productsapp`. UI: "Very Random Items Shop". Data: dummyjson products (makeup, groceries, etc. — not characters).
-- If the project is really a character showcase (e.g. Rick & Morty API), that is a re-scope, not a rename — write an ADR first.
+- Folder: `character-showcase`. Package (`package.json`): `productsapp`. UI: "Very Random Items Shop". Data: dummyjson products until the HSR rework lands (then: HSR roster from the bundled JSON).
+- The rework resolves the drift (folder name finally matches content); package rename still needs an explicit decision.
 
 ## Open gaps
 
-- No test runner or test files. Filter logic (`trim`/`includes`/reset) is only manually reasoned + build-verified. Recommendation: add Vitest + React Testing Library, or at minimum a `node --test` pure-filter test.
+- No test runner or test files. Rework spec calls for a `node --test` suite over the pure search/filter predicate (no new dependencies).
+- `docs/features/*` and `ARCHITECTURE.md` still describe the products version; rewritten during rework implementation per the spec's file map.
+- `docs/other/` is scratch space (see `docs/other/.gitignore`): never commit its contents, and ignore them in reviews.
 - No pagination, no debounce, search covers `title` only.
 - `console.dir(err)` on fetch failure — replace with a logging decision if this grows.
 - No image error fallback; `brand` may render empty for unbranded items.

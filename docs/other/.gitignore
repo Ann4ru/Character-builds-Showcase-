@@ -1,0 +1,4 @@
+# Scratch space for agents and humans. This .gitignore is committed;
+# everything else in this directory is ignored and never committed.
+*
+!.gitignore

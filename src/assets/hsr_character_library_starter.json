@@ -1,0 +1,4105 @@
+{
+  "schemaVersion": "1.1",
+  "game": "Honkai: Star Rail",
+  "lastChecked": "2026-09-23",
+  "notes": [
+    "This is a starter library. null/empty fields are intentionally left for manual completion.",
+    "Character roster was taken from the current Genshin.gg Honkai: Star Rail character list.",
+    "Acheron, Cyrene and Evernight build fields were directly checked against their current Genshin.gg character pages.",
+    "Overall rating and role are editorial/gameplay judgements rather than immutable game data; keep their source/version alongside them when you fill them.",
+    "Honkai: Star Rail also has the Erudition path, which should be included in your enum even though it was missing from the original requested path list.",
+    "Trailblazer forms are separate entries because their element/path/build changes by form.",
+    "2026-09-22: batch-filled element/path/rating/role/builds from genshin.gg via parallel research; images left null per user; Trailblazer (Lightning)/Yao Guang body+sphere Any mapped to null (unconfirmed).",
+    "2026-09-23: added rarity enum (5-star | 4-star) + per-character rarity; filled all 90 image fields with genshin.gg hotlinks (sunderarmor.com/STARRAIL/Characters/Thumb/<id>.png) scraped from the live roster page. overallRating values kept from 2026-09-22 research (editorial).",
+    "2026-09-23: genshin.gg spells Boothill as \"Boothiill\" on the roster page; JSON keeps the in-game spelling \"Boothill\" (thumb 3020). Sync script must alias these.",
+    "2026-09-23: live roster contains Black Swan and Bronya, which are absent from this file; the sync script should add them as stubs."
+  ],
+  "enums": {
+    "elements": [
+      "ice",
+      "lightning",
+      "quantum",
+      "wind",
+      "physical",
+      "fire",
+      "imaginary"
+    ],
+    "paths": [
+      "destruction",
+      "hunt",
+      "nihility",
+      "preservation",
+      "abundance",
+      "harmony",
+      "erudition",
+      "elation",
+      "remembrance"
+    ],
+    "ratings": [
+      "SS",
+      "S+",
+      "S",
+      "A",
+      "B",
+      "C"
+    ],
+    "roles": [
+      "DPS",
+      "support",
+      "sustain"
+    ],
+    "bodyMainStats": [
+      "HP%",
+      "ATK%",
+      "DEF%",
+      "EffectHitRate",
+      "OutgoingHealingBoost",
+      "CRIT rate",
+      "CRIT DMG"
+    ],
+    "feetMainStats": [
+      "HP%",
+      "ATK%",
+      "DEF%",
+      "SPD"
+    ],
+    "sphereMainStats": [
+      "HP%",
+      "ATK%",
+      "DEF%",
+      "Physical DMG Boost",
+      "Fire DMG Boost",
+      "Ice DMG Boost",
+      "Wind DMG Boost",
+      "Lightning DMG Boost",
+      "Quantum DMG Boost",
+      "Imaginary DMG Boost"
+    ],
+    "ropeMainStats": [
+      "HP%",
+      "ATK%",
+      "DEF%",
+      "Break Effect",
+      "Energy Regeneration Rate"
+    ],
+    "subStats": [
+      "HP%",
+      "ATK%",
+      "DEF%",
+      "Flat ATK",
+      "Flat DEF",
+      "Flat HP",
+      "SPD",
+      "EffectHitRate",
+      "Break Effect",
+      "Effect RES",
+      "CRIT rate",
+      "CRIT DMG"
+    ],
+    "rarities": [
+      "5-star",
+      "4-star"
+    ]
+  },
+  "characters": [
+    {
+      "name": "Acheron",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3017.png",
+      "element": "lightning",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "DPS",
+      "bestLightCones": [
+        "Along the Passing Shore",
+        "Incessant Rain",
+        "Good Night and Sleep Well"
+      ],
+      "bestRelics": [
+        "Pioneer Diver of Dead Waters"
+      ],
+      "bestOrnaments": [
+        "Izumo Gensei and Takama Divine Realm"
+      ],
+      "mainStats": {
+        "body": [
+          "CRIT rate",
+          "CRIT DMG"
+        ],
+        "feet": [
+          "SPD",
+          "ATK%"
+        ],
+        "sphere": [
+          "ATK%",
+          "Lightning DMG Boost"
+        ],
+        "rope": [
+          "ATK%"
+        ]
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [
+          "Acheron",
+          "Mortenax Blade",
+          "Welt",
+          "Permansor Terrae"
+        ],
+        [
+          "Acheron",
+          "Mortenax Blade",
+          "Cipher",
+          "Gallagher"
+        ],
+        [
+          "Acheron",
+          "Mortenax Blade",
+          "Sparkle",
+          "Permansor Terrae"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/acheron/"
+      ]
+    },
+    {
+      "name": "Aglaea",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3037.png",
+      "element": "lightning",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "DPS",
+      "bestLightCones": [
+        "Time Woven into Gold",
+        "Sweat Now, Cry Less",
+        "Geniuses' Greetings"
+      ],
+      "bestRelics": [
+        "Hero of Triumphant Song"
+      ],
+      "bestOrnaments": [
+        "The Wondrous BananAmusement Park"
+      ],
+      "mainStats": {
+        "body": [
+          "CRIT rate",
+          "CRIT DMG"
+        ],
+        "feet": [
+          "SPD",
+          "ATK%"
+        ],
+        "sphere": "Lightning DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [
+          "Aglaea",
+          "Summeretto",
+          "Cyrene",
+          "Permansor Terrae"
+        ],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/aglaea/"
+      ]
+    },
+    {
+      "name": "Anaxa",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3042.png",
+      "element": "wind",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "DPS",
+      "bestLightCones": [
+        "Life Should Be Cast to Flames",
+        "Into the Unreachable Veil",
+        "The Great Cosmic Enterprise"
+      ],
+      "bestRelics": [
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Wind DMG boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "SPD",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [
+          "Anaxa",
+          "Cyrene",
+          "Cerydra",
+          "Permansor Terrae"
+        ],
+        [
+          "Anaxa",
+          "The Herta",
+          "Tribbie",
+          "Permansor Terrae"
+        ],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/anaxa/"
+      ]
+    },
+    {
+      "name": "Archer",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3046.png",
+      "element": "quantum",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Hell Where Ideals Burn",
+        "Baptism of Pure Thought",
+        "Worrisome, Blissfull"
+      ],
+      "bestRelics": [
+        "As Navigator Isee Sees It"
+      ],
+      "bestOrnaments": [
+        "Tengoku Livestream"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Quantum DMG boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "Flat ATK"
+      ],
+      "bestTeams": [
+        [
+          "Archer",
+          "Sparkle",
+          "Rin Tohsaka",
+          "Permansor Terrae"
+        ],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/archer/"
+      ]
+    },
+    {
+      "name": "Argenti",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3009.png",
+      "element": "physical",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "An Instant Before A Gaze",
+        "Into the Unreachable Veil",
+        "Today Is Another Peaceful Day"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": [
+          "CRIT rate",
+          "CRIT DMG"
+        ],
+        "feet": [
+          "SPD",
+          "ATK%"
+        ],
+        "sphere": "Physical DMG boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT DMG",
+        "CRIT rate",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [
+          "Argenti",
+          "Sunday",
+          "Tribbie",
+          "Huohuo"
+        ],
+        [
+          "Argenti",
+          "The Herta",
+          "Tribbie",
+          "Huohuo"
+        ],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/argenti/"
+      ]
+    },
+    {
+      "name": "Ashveil",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3056.png",
+      "element": "lightning",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Finale of a Lie",
+        "Baptism of Pure Thought",
+        "The Hell Where Ideals Burn"
+      ],
+      "bestRelics": [
+        "The Ashblazing Grand Duke",
+        "Prisoner in Deep Confinement"
+      ],
+      "bestOrnaments": [
+        "Duran, Dynasty of Running Wolves",
+        "City of Converging Stars"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "ATK%",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "ATK%",
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/ashveil/"
+      ]
+    },
+    {
+      "name": "Aventurine",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3018.png",
+      "element": "imaginary",
+      "path": "preservation",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "sustain",
+      "bestLightCones": [
+        "Inherently Unjust Destiny",
+        "Moment of Victory",
+        "Concert for Two"
+      ],
+      "bestRelics": [
+        "Knight of Purity Palace",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Broken Keel",
+        "Duran, Dynasty of Running Wolves"
+      ],
+      "mainStats": {
+        "body": "DEF%",
+        "feet": "DEF%",
+        "sphere": "DEF%",
+        "rope": "DEF%"
+      },
+      "subStats": [
+        "DEF%",
+        "CRIT DMG",
+        "SPD",
+        "Flat DEF"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/aventurine/"
+      ]
+    },
+    {
+      "name": "Aventurine - Waveflair",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3064.png",
+      "element": "quantum",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "Summer Rides the Surf",
+        "Today's Good Luck",
+        "A Little Getaway"
+      ],
+      "bestRelics": [
+        "Ever-Glorious Magical Girl",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Punklorde Stage Zero",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "SPD",
+        "sphere": "Quantum DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/aventurine---waveflair/"
+      ]
+    },
+    {
+      "name": "Bailu",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1211.png",
+      "element": "lightning",
+      "path": "abundance",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "sustain",
+      "bestLightCones": [
+        "Post-Op Conversation",
+        "Time Waits for No One",
+        "Perfect Timing"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "HP%",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "HP%",
+        "SPD",
+        "DEF%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/bailu/"
+      ]
+    },
+    {
+      "name": "Blade",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1205.png",
+      "element": "wind",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Unreachable Side",
+        "Flame of Blood, Blaze My Path",
+        "A Secret Vow"
+      ],
+      "bestRelics": [
+        "Longevous Disciple"
+      ],
+      "bestOrnaments": [
+        "Bone Collection's Serene Demesne",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "HP%",
+        "sphere": "Wind DMG Boost",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "HP%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/blade/"
+      ]
+    },
+    {
+      "name": "Boothill",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3020.png",
+      "element": "physical",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Sailing Towards A Second Life",
+        "Shadowed by Night",
+        "Cruising in the Stellar Sea"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "Break Effect",
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/boothill/"
+      ]
+    },
+    {
+      "name": "Castorice",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3041.png",
+      "element": "quantum",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "Make Farewells More Beautiful",
+        "Sweat Now, Cry Less",
+        "Time Waits for No One"
+      ],
+      "bestRelics": [
+        "Poet of Mourning Collapse",
+        "Longevous Disciple"
+      ],
+      "bestOrnaments": [
+        "Bone Collection's Serene Demesne",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "HP%",
+        "sphere": "HP%",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "HP%",
+        "SPD",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/castorice/"
+      ]
+    },
+    {
+      "name": "Cerydra",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3048.png",
+      "element": "wind",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "support",
+      "bestLightCones": [
+        "Epoch Etched in Golden Blood",
+        "Flowing Nightglow",
+        "Dance! Dance! Dance!"
+      ],
+      "bestRelics": [
+        "Sacerdos' Relived Ordeal",
+        "Prisoner in Deep Confinement"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Fleet of the Ageless"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "ATK%",
+        "SPD",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/cerydra/"
+      ]
+    },
+    {
+      "name": "Cipher",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3043.png",
+      "element": "quantum",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "DPS",
+      "bestLightCones": [
+        "Lies Dance on the Breeze",
+        "Holiday Thermae Escapade",
+        "Incessant Rain"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Firmament Frontline: Glamoth"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "EffectHitRate",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/cipher/"
+      ]
+    },
+    {
+      "name": "Clara",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1107.png",
+      "element": "physical",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Thus Burns the Dawn",
+        "Dance at Sunset",
+        "Brighter Than the Sun"
+      ],
+      "bestRelics": [
+        "Champion of Streetwise Boxing",
+        "The Ashblazing Grand Duke"
+      ],
+      "bestOrnaments": [
+        "Inert Salsotto",
+        "Duran, Dynasty of Running Wolves"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Physical DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/clara/"
+      ]
+    },
+    {
+      "name": "Cyrene",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3052.png",
+      "element": "ice",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "support",
+      "bestLightCones": [
+        "This Love, Forever",
+        "Long May Rainbows Adorn the Sky",
+        "Memory's Curtain Never Falls"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "CRIT rate",
+        "CRIT DMG",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [
+          "Cyrene",
+          "Castorice",
+          "Evernight",
+          "Hyacine"
+        ],
+        [
+          "Cyrene",
+          "Aglaea",
+          "Sunday",
+          "Hyacine"
+        ],
+        [
+          "Evernight",
+          "Cyrene",
+          "Trailblazer (Remembrance)",
+          "Hyacine"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/cyrene/"
+      ]
+    },
+    {
+      "name": "Dan Heng - Imbibitor Lunae",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3002.png",
+      "element": "imaginary",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Brighter Than the Sun",
+        "On the Fall of an Aeon",
+        "Under the Blue Sky"
+      ],
+      "bestRelics": [
+        "Wastelander of Banditry Desert",
+        "Musketeer of Wild Wheat"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Firmament Frontline: Glamoth"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Imaginary DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/dan-heng---imbibitor-lunae/"
+      ]
+    },
+    {
+      "name": "Dan Heng - Permansor Terrae",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3050.png",
+      "element": "physical",
+      "path": "preservation",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "sustain",
+      "bestLightCones": [
+        "Though Worlds Apart",
+        "Inherently Unjust Destiny",
+        "Journey, Forever Peaceful"
+      ],
+      "bestRelics": [
+        "Self-Enshrouded Recluse",
+        "Warrior Goddess of Sun and Thunder"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Penacony, Land of the Dreams"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "ATK%",
+        "SPD",
+        "Break Effect",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/dan-heng---permansor-terrae/"
+      ]
+    },
+    {
+      "name": "Dr. Ratio",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3012.png",
+      "element": "imaginary",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Baptism of Pure Thought",
+        "The Finale of a Lie",
+        "Worrisome, Blissful"
+      ],
+      "bestRelics": [
+        "Pioneer Diver of Dead Waters",
+        "Wastelander of Banditry Desert"
+      ],
+      "bestOrnaments": [
+        "Firmament Frontline: Glamoth",
+        "Duran, Dynasty of Running Wolves"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Imaginary DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/dr.-ratio/"
+      ]
+    },
+    {
+      "name": "Evanescia",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3057.png",
+      "element": "physical",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "Until the Flowers Bloom Again",
+        "Dazzled by a Flowery World",
+        "Today's Good Luck"
+      ],
+      "bestRelics": [
+        "Ever-Glorious Magical Girl",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Punklorde Stage Zero"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "ATK%",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT DMG",
+        "CRIT rate",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/evanescia/"
+      ]
+    },
+    {
+      "name": "Evernight",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3051.png",
+      "element": "ice",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "SS",
+      "role": "DPS",
+      "bestLightCones": [
+        "To Evernight's Stars",
+        "Make Farewells More Beautiful",
+        "Sweat Now, Cry Less"
+      ],
+      "bestRelics": [
+        "World-Remaking Deliverer"
+      ],
+      "bestOrnaments": [
+        "Bone Collection's Serene Demesne"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "HP%",
+        "sphere": "HP%",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "HP%",
+        "Effect RES",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [
+          "Castorice",
+          "Evernight",
+          "Tribbie",
+          "Hyacine"
+        ],
+        [
+          "Evernight",
+          "Trailblazer (Remembrance)",
+          "Tribbie",
+          "Hyacine"
+        ],
+        [
+          "Evernight",
+          "Pela",
+          "Ruan Mei",
+          "Gallagher"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/evernight/"
+      ]
+    },
+    {
+      "name": "Feixiao",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3031.png",
+      "element": "wind",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "I Venture Forth to Hunt",
+        "Baptism of Pure Thought",
+        "The Finale of a Lie"
+      ],
+      "bestRelics": [
+        "The Wind-Soaring Valorous",
+        "The Ashblazing Grand Duke"
+      ],
+      "bestOrnaments": [
+        "Duran, Dynasty of Running Wolves",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Wind DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/feixiao/"
+      ]
+    },
+    {
+      "name": "Firefly",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3025.png",
+      "element": "fire",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S+",
+      "role": "DPS",
+      "bestLightCones": [
+        "Whereabouts Should Dreams Rest",
+        "Thus Burns the Dawn",
+        "On the Fall of an Aeon"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "ATK%",
+        "HP%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/firefly/"
+      ]
+    },
+    {
+      "name": "Fu Xuan",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3003.png",
+      "element": "quantum",
+      "path": "preservation",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "sustain",
+      "bestLightCones": [
+        "She Already Shut Her Eyes",
+        "Moment of Victory",
+        "Day One of My New Life"
+      ],
+      "bestRelics": [
+        "Longevous Disciple",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "HP%",
+        "sphere": "DEF%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "HP%",
+        "DEF%",
+        "SPD",
+        "Flat HP"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/fu-xuan/"
+      ]
+    },
+    {
+      "name": "Fugue",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3035.png",
+      "element": "fire",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Long Road Leads Home",
+        "Lies Dance on the Breeze",
+        "Holiday Thermae Escapade"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Thief of Shooting Meteor"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "EffectHitRate",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/fugue/"
+      ]
+    },
+    {
+      "name": "Gepard",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1104.png",
+      "element": "ice",
+      "path": "preservation",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "sustain",
+      "bestLightCones": [
+        "Moment of Victory",
+        "Day One of My New Life",
+        "Landau's Choice"
+      ],
+      "bestRelics": [
+        "Knight of Purity Palace",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "DEF%",
+        "feet": "SPD",
+        "sphere": "DEF%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "DEF%",
+        "HP%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/gepard/"
+      ]
+    },
+    {
+      "name": "Gilgamesh",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3062.png",
+      "element": "lightning",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "I Am As You Behold",
+        "A Thankless Coronation",
+        "On the Fall of an Aeon"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Cosmic Life Sciences Institute",
+        "Izumo Gensei and Takama Divine Realm"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Lightning DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/gilgamesh/"
+      ]
+    },
+    {
+      "name": "Himeko",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1003.png",
+      "element": "fire",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Night on the Milky Way",
+        "Yet Hope Is Priceless",
+        "Before Dawn"
+      ],
+      "bestRelics": [
+        "The Ashblazing Grand Duke",
+        "Musketeer of Wild Wheat"
+      ],
+      "bestOrnaments": [
+        "Sigonia, the Unclaimed Desolation",
+        "Duran, Dynasty of Running Wolves"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Fire DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/himeko/"
+      ]
+    },
+    {
+      "name": "Himeko (Nova)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3063.png",
+      "element": "fire",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "A Star That Lights the Night",
+        "Night on the Milky Way",
+        "Before Dawn"
+      ],
+      "bestRelics": [
+        "As Navigator Isee Sees It",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Fallen Star Anchorage",
+        "The Wondrous BananAmusement Park"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Fire DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/himeko-(nova)/"
+      ]
+    },
+    {
+      "name": "Huohuo",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3008.png",
+      "element": "wind",
+      "path": "abundance",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "sustain",
+      "bestLightCones": [
+        "Night of Fright",
+        "Post-Op Conversation",
+        "Quid Pro Quo"
+      ],
+      "bestRelics": [
+        "Warrior Goddess of Sun and Thunder",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Sprightly Vonwacq"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "Effect RES",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/huohuo/"
+      ]
+    },
+    {
+      "name": "Hyacine",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3044.png",
+      "element": "wind",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "sustain",
+      "bestLightCones": [
+        "Long May Rainbows Adorn the Sky",
+        "Memory's Curtain Never Falls",
+        "Shadowburn"
+      ],
+      "bestRelics": [
+        "Warrior Goddess of Sun and Thunder",
+        "World-Remaking Deliverer"
+      ],
+      "bestOrnaments": [
+        "Giant Tree of Rapt Brooding",
+        "Amphoreus, The Eternal Land"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "CRIT DMG",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/hyacine/"
+      ]
+    },
+    {
+      "name": "Hysilens",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3049.png",
+      "element": "physical",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Why Does the Ocean Sing",
+        "Reforged Remembrance",
+        "Those Many Springs"
+      ],
+      "bestRelics": [
+        "Prisoner in Deep Confinement",
+        "Champion of Streetwise Boxing"
+      ],
+      "bestOrnaments": [
+        "Revelry by the Sea",
+        "Pan-Galactic Commercial Enterprise"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "ATK%",
+        "sphere": "ATK%",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "ATK%",
+        "SPD",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/hysilens/"
+      ]
+    },
+    {
+      "name": "Jade",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3026.png",
+      "element": "quantum",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Yet Hope Is Priceless",
+        "Night on the Milky Way",
+        "Before Dawn"
+      ],
+      "bestRelics": [
+        "The Ashblazing Grand Duke",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Duran, Dynasty of Running Wolves",
+        "Izumo Gensei and Takama Divine Realm"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Quantum DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/jade/"
+      ]
+    },
+    {
+      "name": "Jiaoqiu",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3027.png",
+      "element": "fire",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Those Many Springs",
+        "Why Does the Ocean Sing",
+        "Incessant Rain"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Pan-Cosmic Commercial Enterprise"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "Fire DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "ATK%",
+        "HP%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/jiaoqiu/"
+      ]
+    },
+    {
+      "name": "Jing Yuan",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1204.png",
+      "element": "lightning",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Before Dawn",
+        "Today is Another Peaceful Day",
+        "Night on the Milky Way"
+      ],
+      "bestRelics": [
+        "The Ashblazing Grand Duke",
+        "Band of Sizzling Thunder"
+      ],
+      "bestOrnaments": [
+        "The Wondrous BananAmusement Park",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Lightning DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/jing-yuan/"
+      ]
+    },
+    {
+      "name": "Jingliu",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3005.png",
+      "element": "ice",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Flame of Blood, Blaze My Path",
+        "I Shall Be My Own Sword",
+        "The Unreachable Side"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Bone Collection's Serene Demesne",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "Ice DMG Boost",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "HP%",
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/jingliu/"
+      ]
+    },
+    {
+      "name": "Kafka",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1005.png",
+      "element": "lightning",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Before the Tutorial Mission Starts",
+        "Lies Dance on the Breeze",
+        "Those Many Springs"
+      ],
+      "bestRelics": [
+        "Eagle of Twilight Line",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Sprightly Vonwacq"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "EffectHitRate",
+        "ATK%",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/kafka/"
+      ]
+    },
+    {
+      "name": "Lingsha",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3030.png",
+      "element": "fire",
+      "path": "abundance",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "sustain",
+      "bestLightCones": [
+        "Scent Alone Stays True",
+        "Echoes of the Coffin",
+        "Night of Fright"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Fleet of the Ageless"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/lingsha/"
+      ]
+    },
+    {
+      "name": "Luocha",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1203.png",
+      "element": "imaginary",
+      "path": "abundance",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "sustain",
+      "bestLightCones": [
+        "Echoes of the Coffin",
+        "Multiplication",
+        "Dream's Montage"
+      ],
+      "bestRelics": [
+        "Musketeer of Wild Wheat",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "ATK%",
+        "HP%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/luocha/"
+      ]
+    },
+    {
+      "name": "Mortenax Blade",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3060.png",
+      "element": "fire",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Lies Dance on the Breeze",
+        "Holiday Thermae Escapade",
+        "Before the Tutorial Mission Starts"
+      ],
+      "bestRelics": [
+        "Divine-Querying Master Smith",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "HP%",
+        "EffectHitRate"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/mortenax-blade/"
+      ]
+    },
+    {
+      "name": "Mydei",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3040.png",
+      "element": "imaginary",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Flame of Blood, Blaze My Path",
+        "The Unreachable Side",
+        "A Secret Vow"
+      ],
+      "bestRelics": [
+        "As Navigator Isee Sees It",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Bone Collection's Serene Demesne",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "HP%",
+        "sphere": "HP%",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "HP%",
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/mydei/"
+      ]
+    },
+    {
+      "name": "Phainon",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3047.png",
+      "element": "physical",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Thus Burns the Dawn",
+        "Brighter Than the Sun",
+        "On the Fall of an Aeon"
+      ],
+      "bestRelics": [
+        "As Navigator Isee Sees It",
+        "Wavestrider Captain"
+      ],
+      "bestOrnaments": [
+        "Arcadia of Woven Dreams",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Physical DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/phainon/"
+      ]
+    },
+    {
+      "name": "Rappa",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3033.png",
+      "element": "imaginary",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Ninjutsu Inscription: Dazzling Evilbreak",
+        "Make the World Clamor",
+        "After the Charmony Fall"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Thief of Shooting Meteor"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "ATK%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/rappa/"
+      ]
+    },
+    {
+      "name": "Rin Tohsaka",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3061.png",
+      "element": "quantum",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Flickering Stars",
+        "Into the Unreachable Veil",
+        "Life Should Be Cast to Flames"
+      ],
+      "bestRelics": [
+        "Genius of Brilliant Stars",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Tengoku Livestream",
+        "City of Converging Stars"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Quantum DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/rin-tohsaka/"
+      ]
+    },
+    {
+      "name": "Robin",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3021.png",
+      "element": "physical",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Flowing Nightglow",
+        "Past Self in Mirror",
+        "The Battle Isn't Over"
+      ],
+      "bestRelics": [
+        "Musketeer of Wild Wheat",
+        "Prisoner in Deep Confinement"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "ATK%",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "ATK%",
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/robin/"
+      ]
+    },
+    {
+      "name": "Robin - Summeretto",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3065.png",
+      "element": "wind",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Rise and Sing",
+        "To Evernight's Stars",
+        "Long May Rainbows Adorn the Sky"
+      ],
+      "bestRelics": [
+        "World-Remaking Deliverer",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Amphoreus, The Eternal Land",
+        "Sprightly Vonwacq"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "HP%",
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/robin---summeretto/"
+      ]
+    },
+    {
+      "name": "Ruan Mei",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3011.png",
+      "element": "ice",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Past Self in Mirror",
+        "In Pursuit of the Wind",
+        "Memories of the Past"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Thief of Shooting Meteor"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Penacony, Land of the Dreams"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/ruan-mei/"
+      ]
+    },
+    {
+      "name": "Saber",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3045.png",
+      "element": "wind",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "A Thankless Coronation",
+        "I Am As You Behold",
+        "Thus Burns the Dawn"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Cosmic Life Sciences Institute",
+        "Space Sealing Station"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Wind DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/saber/"
+      ]
+    },
+    {
+      "name": "Seele",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1102.png",
+      "element": "quantum",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "In the Night",
+        "The Hell Where Ideals Burn",
+        "Cruising in the Stellar Sea"
+      ],
+      "bestRelics": [
+        "Genius of Brilliant Stars",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Firmament Frontline: Glamoth"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Quantum DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/seele/"
+      ]
+    },
+    {
+      "name": "Silver Wolf",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1006.png",
+      "element": "quantum",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Lies Dance on the Breeze",
+        "Resolution Shines As Pearls of Sweat",
+        "Holiday Thermae Escapade"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Penacony, Land of the Dreams"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "Quantum DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/silver-wolf/"
+      ]
+    },
+    {
+      "name": "Silver Wolf LV.999",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3058.png",
+      "element": "imaginary",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Welcome to the Cosmic City",
+        "Summer Rides the Surf",
+        "Today's Good Luck"
+      ],
+      "bestRelics": [
+        "Ever-Glorious Magical Girl",
+        "Diviner of Distant Reach"
+      ],
+      "bestOrnaments": [
+        "Punklorde Stage Zero"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/silver-wolf-lv.999/"
+      ]
+    },
+    {
+      "name": "Sparkle",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3016.png",
+      "element": "quantum",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Earthly Escapade",
+        "The Battle Isn't Over",
+        "Dance! Dance! Dance!"
+      ],
+      "bestRelics": [
+        "Sacerdos' Relived Ordeal",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Sprightly Vonwacq"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "CRIT DMG",
+        "Effect RES",
+        "HP%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/sparkle/"
+      ]
+    },
+    {
+      "name": "Sparxie",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3055.png",
+      "element": "fire",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Dazzled by a Flowery World",
+        "Until the Flowers Bloom Again",
+        "Today's Good Luck"
+      ],
+      "bestRelics": [
+        "Ever-Glorious Magical Girl",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Tengoku Livestream",
+        "Punklorde Stage Zero"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/sparxie/"
+      ]
+    },
+    {
+      "name": "Sunday",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3034.png",
+      "element": "imaginary",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Earthly Escapade",
+        "The Battle Isn't Over",
+        "Planetary Rendezvous"
+      ],
+      "bestRelics": [
+        "Sacerdos' Relived Ordeal",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Broken Keel",
+        "Fleet of the Ageless"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT DMG",
+        "SPD",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/sunday/"
+      ]
+    },
+    {
+      "name": "The Dahlia",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3053.png",
+      "element": "fire",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "Never Forget Her Flame",
+        "Long Road Leads Home",
+        "Lies Dance on the Breeze"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/the-dahlia/"
+      ]
+    },
+    {
+      "name": "The Herta",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3036.png",
+      "element": "ice",
+      "path": "erudition",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Into the Unreachable Veil",
+        "Night on the Milky Way",
+        "Today is Another Peaceful Day"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Izumo Gensei and Takama Divine Realm",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Ice DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/the-herta/"
+      ]
+    },
+    {
+      "name": "Topaz and Numby",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3006.png",
+      "element": "fire",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Finale of a Lie",
+        "Worrisome, Blissful",
+        "Cruising in the Stellar Sea"
+      ],
+      "bestRelics": [
+        "The Ashblazing Grand Duke",
+        "Pioneer Diver of Dead Waters"
+      ],
+      "bestOrnaments": [
+        "Duran, Dynasty of Running Wolves",
+        "The Wondrous BananAmusement Park"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Fire DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/topaz-and-numby/"
+      ]
+    },
+    {
+      "name": "Trailblazer (Fire)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/8003.png",
+      "element": "fire",
+      "path": "preservation",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "sustain",
+      "bestLightCones": [
+        "Moment of Victory",
+        "Landau's Choice",
+        "Day One of My New Life"
+      ],
+      "bestRelics": [
+        "Knight of Purity Palace",
+        "Guard of Wuthering Snow"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "DEF%",
+        "feet": "DEF%",
+        "sphere": "DEF%",
+        "rope": "DEF%"
+      },
+      "subStats": [
+        "DEF%",
+        "SPD",
+        "EffectHitRate",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/trailblazer-(fire)/"
+      ]
+    },
+    {
+      "name": "Trailblazer (Ice)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3038.png",
+      "element": "ice",
+      "path": "remembrance",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "support",
+      "bestLightCones": [
+        "Long May Rainbows Adorn the Sky",
+        "This Love, Forever",
+        "Fly Into a Pink Tomorrow"
+      ],
+      "bestRelics": [
+        "World-Remaking Deliverer",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": "CRIT DMG",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "CRIT DMG",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/trailblazer-(ice)/"
+      ]
+    },
+    {
+      "name": "Trailblazer (Imaginary)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3022.png",
+      "element": "imaginary",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "support",
+      "bestLightCones": [
+        "In Pursuit of the Wind",
+        "Dance! Dance! Dance!",
+        "Past Self in Mirror"
+      ],
+      "bestRelics": [
+        "Watchmaker, Master of Dream Machinations",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Talia: Kingdom of Banditry",
+        "Forge of the Kalpagni Lantern"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "SPD",
+        "Break Effect",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/trailblazer-(imaginary)/"
+      ]
+    },
+    {
+      "name": "Trailblazer (Lightning)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3059.png",
+      "element": "lightning",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "support",
+      "bestLightCones": [
+        "When She Decided to See",
+        "Until the Flowers Bloom Again",
+        "Mushy Shroomy's Adventures"
+      ],
+      "bestRelics": [
+        "Diviner of Distant Reach",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": null,
+        "feet": "SPD",
+        "sphere": null,
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/trailblazer-(lightning)/"
+      ]
+    },
+    {
+      "name": "Trailblazer (Physical)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/8001.png",
+      "element": "physical",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Thus Burns the Dawn",
+        "On the Fall of an Aeon",
+        "Something Irreplaceable"
+      ],
+      "bestRelics": [
+        "Wavestrider Captain",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Physical DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/trailblazer-(physical)/"
+      ]
+    },
+    {
+      "name": "Tribbie",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3039.png",
+      "element": "quantum",
+      "path": "harmony",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "If Time Were a Flower",
+        "Dance! Dance! Dance!",
+        "Memories of the Past"
+      ],
+      "bestRelics": [
+        "Poet of Mourning Collapse",
+        "Genius of Brilliant Stars"
+      ],
+      "bestOrnaments": [
+        "Lushaka, the Sunken Seas",
+        "Penacony, Land of the Dreams"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "HP%",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "HP%",
+        "DEF%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/tribbie/"
+      ]
+    },
+    {
+      "name": "Welt",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1004.png",
+      "element": "imaginary",
+      "path": "nihility",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "support",
+      "bestLightCones": [
+        "Before the Tutorial Mission Starts",
+        "Lies Dance on the Breeze",
+        "Holiday Thermae Escapade"
+      ],
+      "bestRelics": [
+        "Divine-Querying Master Smith",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/welt/"
+      ]
+    },
+    {
+      "name": "Yanqing",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1209.png",
+      "element": "ice",
+      "path": "hunt",
+      "rarity": "5-star",
+      "overallRating": "A",
+      "role": "DPS",
+      "bestLightCones": [
+        "Baptism of Pure Thought",
+        "In the Night",
+        "Sleep Like the Dead"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "The Wind-Soaring Valorous"
+      ],
+      "bestOrnaments": [
+        "Firmament Frontline: Glamoth",
+        "Space Sealing Station"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Ice DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/yanqing/"
+      ]
+    },
+    {
+      "name": "Yao Guang",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3054.png",
+      "element": "physical",
+      "path": "elation",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "support",
+      "bestLightCones": [
+        "When She Decided to See",
+        "Until the Flowers Bloom Again",
+        "Mushy Shroomy's Adventures"
+      ],
+      "bestRelics": [
+        "Diviner of Distant Reach",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": null,
+        "feet": "SPD",
+        "sphere": null,
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/yao-guang/"
+      ]
+    },
+    {
+      "name": "Yunli",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3028.png",
+      "element": "physical",
+      "path": "destruction",
+      "rarity": "5-star",
+      "overallRating": "S",
+      "role": "DPS",
+      "bestLightCones": [
+        "Dance at Sunset",
+        "The Unreachable Side",
+        "Brighter Than the Sun"
+      ],
+      "bestRelics": [
+        "The Wind-Soaring Valorous",
+        "The Ashblazing Grand Duke"
+      ],
+      "bestOrnaments": [
+        "Inert Salsotto",
+        "Duran, Dynasty of Running Wolves"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Physical DMG Boost",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/yunli/"
+      ]
+    },
+    {
+      "name": "Arlan",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1008.png",
+      "element": "lightning",
+      "path": "destruction",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Unreachable Side",
+        "On the Fall of an Aeon",
+        "I Shall Be My Own Sword"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Longevous Disciple"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Lightning DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/arlan/"
+      ]
+    },
+    {
+      "name": "Asta",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1009.png",
+      "element": "fire",
+      "path": "harmony",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "support",
+      "bestLightCones": [
+        "Memories of the Past",
+        "Meshing Cogs",
+        "Dance! Dance! Dance!"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "City of Converging Stars",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "DEF%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/asta/"
+      ]
+    },
+    {
+      "name": "Dan Heng",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1002.png",
+      "element": "wind",
+      "path": "hunt",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "In the Night",
+        "Cruising in the Stellar Sea",
+        "Swordplay"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Pioneer Diver of Dead Waters"
+      ],
+      "bestOrnaments": [
+        "Firmament Frontline: Glamoth",
+        "Rutilant Arena"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Wind DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/dan-heng/"
+      ]
+    },
+    {
+      "name": "Gallagher",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3019.png",
+      "element": "fire",
+      "path": "abundance",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "sustain",
+      "bestLightCones": [
+        "Multiplication",
+        "Scent Alone Stays True",
+        "Post-Op Conversation"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "Break Effect",
+        "SPD",
+        "HP%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/gallagher/"
+      ]
+    },
+    {
+      "name": "Guinaifen",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3007.png",
+      "element": "fire",
+      "path": "nihility",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "Those Many Springs",
+        "Incessant Rain",
+        "Patience is All You Need"
+      ],
+      "bestRelics": [
+        "Prisoner in Deep Confinement"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "Fire DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "ATK%",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/guinaifen/"
+      ]
+    },
+    {
+      "name": "Hanya",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3010.png",
+      "element": "physical",
+      "path": "harmony",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "support",
+      "bestLightCones": [
+        "Earthly Escapade",
+        "Memories of the Past",
+        "Meshing Cogs"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "DEF%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/hanya/"
+      ]
+    },
+    {
+      "name": "Herta",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1013.png",
+      "element": "ice",
+      "path": "erudition",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "Before Dawn",
+        "Night on the Milky Way",
+        "A Dream Scented in Wheat"
+      ],
+      "bestRelics": [
+        "Eagle of Twilight Line",
+        "The Ashblazing Grand Duke"
+      ],
+      "bestOrnaments": [
+        "Sprightly Vonwacq",
+        "City of Converging Stars"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Ice DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/herta/"
+      ]
+    },
+    {
+      "name": "Hook",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1109.png",
+      "element": "fire",
+      "path": "destruction",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "Something Irreplaceable",
+        "On the Fall of an Aeon",
+        "Woof! Walk Time!"
+      ],
+      "bestRelics": [
+        "Pioneer Diver of Dead Waters",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Fire DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "EffectHitRate",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/hook/"
+      ]
+    },
+    {
+      "name": "Luka",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3000.png",
+      "element": "physical",
+      "path": "nihility",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "Long Road Leads Home",
+        "Lies Dance on the Breeze",
+        "Solitary Healing"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Prisoner in Deep Confinement"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "Physical DMG Boost",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "SPD",
+        "ATK%",
+        "Break Effect",
+        "EffectHitRate"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/luka/"
+      ]
+    },
+    {
+      "name": "Lynx",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3004.png",
+      "element": "quantum",
+      "path": "abundance",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "sustain",
+      "bestLightCones": [
+        "Post-Op Conversation",
+        "Time Waits for No One",
+        "Perfect Timing"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "HP%"
+      },
+      "subStats": [
+        "HP%",
+        "SPD",
+        "Effect RES",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/lynx/"
+      ]
+    },
+    {
+      "name": "March 7th",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1001.png",
+      "element": "ice",
+      "path": "preservation",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "sustain",
+      "bestLightCones": [
+        "Inherently Unjust Destiny",
+        "Moment of Victory",
+        "Day One of My New Life"
+      ],
+      "bestRelics": [
+        "Knight of Purity Palace",
+        "Messenger Traversing Hackerspace"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "DEF%",
+        "feet": "SPD",
+        "sphere": "DEF%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "DEF%",
+        "EffectHitRate",
+        "SPD",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/march-7th/"
+      ]
+    },
+    {
+      "name": "March 7th (The Hunt)",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3029.png",
+      "element": "imaginary",
+      "path": "hunt",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Finale of a Lie",
+        "Worrisome, Blissful",
+        "Baptism of Pure Thought"
+      ],
+      "bestRelics": [
+        "Musketeer of Wild Wheat",
+        "Wastelander of Banditry Desert"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Izumo Gensei and Takama Divine Realm"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Imaginary DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/march-7th-(the-hunt)/"
+      ]
+    },
+    {
+      "name": "Misha",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3015.png",
+      "element": "ice",
+      "path": "destruction",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "On the Fall of an Aeon",
+        "Under the Blue Sky",
+        "Indelible Promise"
+      ],
+      "bestRelics": [
+        "Scholar Lost in Erudition",
+        "Pioneer Diver of Dead Waters"
+      ],
+      "bestOrnaments": [
+        "Firmament Frontline: Glamoth",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Ice DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/misha/"
+      ]
+    },
+    {
+      "name": "Moze",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3032.png",
+      "element": "lightning",
+      "path": "hunt",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "The Finale of a Lie",
+        "Worrisome, Blissful",
+        "Baptism of Pure Thought"
+      ],
+      "bestRelics": [
+        "Pioneer Diver of Dead Waters",
+        "The Ashblazing Grand Duke"
+      ],
+      "bestOrnaments": [
+        "Duran, Dynasty of Running Wolves",
+        "Inert Salsotto"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "ATK%",
+        "sphere": "Lightning DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "SPD",
+        "ATK%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/moze/"
+      ]
+    },
+    {
+      "name": "Natasha",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1105.png",
+      "element": "physical",
+      "path": "abundance",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "sustain",
+      "bestLightCones": [
+        "Post-Op Conversation",
+        "Time Waits for No One",
+        "Perfect Timing"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "OutgoingHealingBoost",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "HP%",
+        "SPD",
+        "Effect RES",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [],
+        [],
+        []
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/natasha/"
+      ]
+    },
+    {
+      "name": "Pela",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1106.png",
+      "element": "ice",
+      "path": "nihility",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "support",
+      "bestLightCones": [
+        "Lies Dance on the Breeze",
+        "Resolution Shines As Pearls of Sweat",
+        "Incessant Rain"
+      ],
+      "bestRelics": [
+        "Eagle of Twilight Line",
+        "Divine-Querying Master Smith"
+      ],
+      "bestOrnaments": [
+        "City of Converging Stars",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [
+          "Acheron",
+          "Pela",
+          "Silver Wolf",
+          "Aventurine"
+        ],
+        [
+          "Jingliu",
+          "Pela",
+          "Tingyun",
+          "Luocha"
+        ],
+        [
+          "Dan Heng - Imbibitor Lunae",
+          "Pela",
+          "Tingyun",
+          "Luocha"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/pela/"
+      ]
+    },
+    {
+      "name": "Qingque",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1201.png",
+      "element": "quantum",
+      "path": "erudition",
+      "rarity": "4-star",
+      "overallRating": "C",
+      "role": "DPS",
+      "bestLightCones": [
+        "Yet Hope Is Priceless",
+        "Before Dawn",
+        "An Instant Before A Gaze"
+      ],
+      "bestRelics": [
+        "Genius of Brilliant Stars",
+        "Musketeer of Wild Wheat"
+      ],
+      "bestOrnaments": [
+        "Rutilant Arena",
+        "Firmament Frontline: Glamoth"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Quantum DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [
+          "Qingque",
+          "Sparkle",
+          "Tingyun",
+          "Fu Xuan"
+        ],
+        [
+          "Qingque",
+          "Silver Wolf",
+          "Tingyun",
+          "Luocha"
+        ],
+        [
+          "Qingque",
+          "Bronya",
+          "Pela",
+          "Gallagher"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/qingque/"
+      ]
+    },
+    {
+      "name": "Sampo",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1108.png",
+      "element": "wind",
+      "path": "nihility",
+      "rarity": "4-star",
+      "overallRating": "C",
+      "role": "DPS",
+      "bestLightCones": [
+        "Those Many Springs",
+        "Lies Dance on the Breeze",
+        "Patience is All You Need"
+      ],
+      "bestRelics": [
+        "Prisoner in Deep Confinement",
+        "Eagle of Twilight Line"
+      ],
+      "bestOrnaments": [
+        "Revelry by the Sea",
+        "Firmament Frontline: Glamoth"
+      ],
+      "mainStats": {
+        "body": "EffectHitRate",
+        "feet": "SPD",
+        "sphere": "Wind DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "EffectHitRate",
+        "SPD",
+        "ATK%",
+        "Break Effect"
+      ],
+      "bestTeams": [
+        [
+          "Kafka",
+          "Sampo",
+          "Black Swan",
+          "Huohuo"
+        ],
+        [
+          "Kafka",
+          "Sampo",
+          "Ruan Mei",
+          "Gallagher"
+        ],
+        [
+          "Black Swan",
+          "Sampo",
+          "Tingyun",
+          "Luocha"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/sampo/"
+      ]
+    },
+    {
+      "name": "Serval",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1103.png",
+      "element": "lightning",
+      "path": "erudition",
+      "rarity": "4-star",
+      "overallRating": "B",
+      "role": "DPS",
+      "bestLightCones": [
+        "Night on the Milky Way",
+        "Today is Another Peaceful Day",
+        "Geniuses' Repose"
+      ],
+      "bestRelics": [
+        "Pioneer Diver of Dead Waters",
+        "Scholar Lost in Erudition"
+      ],
+      "bestOrnaments": [
+        "Firmament Frontline: Glamoth",
+        "Space Sealing Station"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "Lightning DMG Boost",
+        "rope": "ATK%"
+      },
+      "subStats": [
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [
+          "Serval",
+          "Tingyun",
+          "Asta",
+          "Gallagher"
+        ],
+        [
+          "Serval",
+          "Kafka",
+          "Asta",
+          "Bailu"
+        ],
+        [
+          "Serval",
+          "Silver Wolf",
+          "Bronya",
+          "Fu Xuan"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/serval/"
+      ]
+    },
+    {
+      "name": "Sushang",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1206.png",
+      "element": "physical",
+      "path": "hunt",
+      "rarity": "4-star",
+      "overallRating": "C",
+      "role": "DPS",
+      "bestLightCones": [
+        "Sailing Towards A Second Life",
+        "Shadowed by Night",
+        "Cruising in the Stellar Sea"
+      ],
+      "bestRelics": [
+        "Iron Cavalry Against the Scourge",
+        "Thief of Shooting Meteor"
+      ],
+      "bestOrnaments": [
+        "Forge of the Kalpagni Lantern",
+        "Talia: Kingdom of Banditry"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "Break Effect",
+        "SPD",
+        "HP%",
+        "DEF%"
+      ],
+      "bestTeams": [
+        [
+          "Sushang",
+          "Tingyun",
+          "Pela",
+          "Gallagher"
+        ],
+        [
+          "Sushang",
+          "Bronya",
+          "Silver Wolf",
+          "Luocha"
+        ],
+        [
+          "Sushang",
+          "Ruan Mei",
+          "Tingyun",
+          "Gallagher"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/sushang/"
+      ]
+    },
+    {
+      "name": "Tingyun",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1202.png",
+      "element": "lightning",
+      "path": "harmony",
+      "rarity": "4-star",
+      "overallRating": "A",
+      "role": "support",
+      "bestLightCones": [
+        "A Grounded Ascent",
+        "Memories of the Past",
+        "Meshing Cogs"
+      ],
+      "bestRelics": [
+        "Sacerdos' Relived Ordeal",
+        "Musketeer of Wild Wheat"
+      ],
+      "bestOrnaments": [
+        "Penacony, Land of the Dreams",
+        "Lushaka, the Sunken Seas"
+      ],
+      "mainStats": {
+        "body": "ATK%",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "DEF%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [
+          "Jingliu",
+          "Tingyun",
+          "Pela",
+          "Luocha"
+        ],
+        [
+          "Dan Heng - Imbibitor Lunae",
+          "Tingyun",
+          "Sparkle",
+          "Fu Xuan"
+        ],
+        [
+          "Jing Yuan",
+          "Tingyun",
+          "Asta",
+          "Gallagher"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/tingyun/"
+      ]
+    },
+    {
+      "name": "Xueyi",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/3013.png",
+      "element": "quantum",
+      "path": "destruction",
+      "rarity": "4-star",
+      "overallRating": "C",
+      "role": "DPS",
+      "bestLightCones": [
+        "Indelible Promise",
+        "On the Fall of an Aeon",
+        "Under the Blue Sky"
+      ],
+      "bestRelics": [
+        "Genius of Brilliant Stars",
+        "Thief of Shooting Meteor"
+      ],
+      "bestOrnaments": [
+        "Talia: Kingdom of Banditry",
+        "Space Sealing Station"
+      ],
+      "mainStats": {
+        "body": "CRIT rate",
+        "feet": "SPD",
+        "sphere": "ATK%",
+        "rope": "Break Effect"
+      },
+      "subStats": [
+        "Break Effect",
+        "CRIT rate",
+        "CRIT DMG",
+        "ATK%",
+        "SPD"
+      ],
+      "bestTeams": [
+        [
+          "Xueyi",
+          "Ruan Mei",
+          "Trailblazer (Imaginary)",
+          "Gallagher"
+        ],
+        [
+          "Xueyi",
+          "Tingyun",
+          "Pela",
+          "Fu Xuan"
+        ],
+        [
+          "Xueyi",
+          "Sparkle",
+          "Silver Wolf",
+          "Luocha"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/xueyi/"
+      ]
+    },
+    {
+      "name": "Yukong",
+      "image": "https://sunderarmor.com/STARRAIL/Characters/Thumb/1207.png",
+      "element": "imaginary",
+      "path": "harmony",
+      "rarity": "4-star",
+      "overallRating": "C",
+      "role": "support",
+      "bestLightCones": [
+        "The Battle Isn't Over",
+        "Past and Future",
+        "Planetary Rendezvous"
+      ],
+      "bestRelics": [
+        "Messenger Traversing Hackerspace",
+        "Sacerdos' Relived Ordeal"
+      ],
+      "bestOrnaments": [
+        "Fleet of the Ageless",
+        "Broken Keel"
+      ],
+      "mainStats": {
+        "body": "HP%",
+        "feet": "SPD",
+        "sphere": "HP%",
+        "rope": "Energy Regeneration Rate"
+      },
+      "subStats": [
+        "SPD",
+        "HP%",
+        "DEF%",
+        "Effect RES"
+      ],
+      "bestTeams": [
+        [
+          "Dan Heng - Imbibitor Lunae",
+          "Yukong",
+          "Tingyun",
+          "Luocha"
+        ],
+        [
+          "Jing Yuan",
+          "Yukong",
+          "Asta",
+          "Fu Xuan"
+        ],
+        [
+          "Dr. Ratio",
+          "Yukong",
+          "Silver Wolf",
+          "Aventurine"
+        ]
+      ],
+      "sources": [
+        "https://genshin.gg/star-rail/characters/yukong/"
+      ]
+    }
+  ]
+}
