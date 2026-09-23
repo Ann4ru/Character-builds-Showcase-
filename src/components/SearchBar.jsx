@@ -15,8 +15,8 @@ function SearchBar({ searchText, setSearchText, onSearch }) {
         <Col xs={12} md={9}>
           <Form.Control
             type="text"
-            placeholder="Search products..."
-            aria-label="Search products"
+            placeholder="Search characters..."
+            aria-label="Search characters"
             value={searchText} // Value controlled by state
             onChange={(e) => setSearchText(e.target.value)} // Update state when something is typed
           />
