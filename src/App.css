@@ -18,6 +18,7 @@
   border-radius: 16px;
   border: 3px solid var(--border);
   background: var(--surface);
+  color: var(--text);
   box-shadow: 4px 4px 0 rgba(0,0,0,0.45);
   transition: transform 120ms;
 }
@@ -27,6 +28,10 @@
 .character-card .card-title {
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: var(--text-h);
+}
+.character-card .card-text {
+  color: var(--text);
 }
 .filter-icon-btn {
   border-radius: 999px;
