@@ -83,7 +83,7 @@ function Characters() {
                             // map() goes through every item of the visible array
                             // For each element it creates a character (card)
                             visible.map((c) => (
-                                <Col key={c.name} sm={12} md={6} lg={4}>
+                                <Col key={c.name} className="character-col">
                                     <Character character={c} onSelect={setSelected} />
                                 </Col>
                             ))}

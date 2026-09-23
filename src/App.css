@@ -13,6 +13,20 @@
   color: #120713;
 }
 
+.character-col {
+  flex: 0 0 auto;
+  width: 50%;
+}
+@media (min-width: 576px) {
+  .character-col {
+    width: 33.3333%;
+  }
+}
+@media (min-width: 992px) {
+  .character-col {
+    width: 20%;
+  }
+}
 .character-card {
   cursor: pointer;
   border-radius: 16px;
