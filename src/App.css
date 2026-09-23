@@ -4,7 +4,7 @@
 
 .product-image,
 .character-image {
-  height: 280px;
+  height: 140px;
   object-fit: cover;
 }
 
@@ -36,6 +36,63 @@
 }
 .offcanvas {
   background: var(--surface);
+  color: var(--text);
+}
+.offcanvas .accordion-item {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.offcanvas .accordion-button {
+  background: var(--surface);
+  color: var(--text);
+}
+.offcanvas .accordion-button:not(.collapsed) {
+  background: var(--accent-bg);
+  color: var(--text-h);
+  box-shadow: none;
+}
+.offcanvas .accordion-button:focus {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 2px var(--accent-bg);
+}
+.offcanvas .accordion-button::after {
+  filter: invert(1) brightness(2);
+}
+.offcanvas .accordion-body {
+  color: var(--text);
+}
+.offcanvas .form-check-label {
+  color: var(--text);
+}
+.offcanvas .btn-close {
+  filter: invert(1) brightness(2);
+}
+.modal-content {
+  background: var(--surface);
+  color: var(--text);
+  border: 3px solid var(--border);
+  border-radius: 16px;
+}
+.modal-content h5,
+.modal-content h6,
+.modal-content .modal-title {
+  color: var(--text-h);
+}
+.modal-header,
+.modal-footer {
+  border-color: var(--border);
+}
+.modal-content .list-group-item {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.modal-content .btn-close {
+  filter: invert(1) brightness(2);
+}
+.modal-content a {
+  color: var(--accent);
 }
 .character-card.rarity-5 {
   border-color: #d4af37;
@@ -44,7 +101,7 @@
   border-color: #9b7ede;
 }
 .character-placeholder {
-  height: 280px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;

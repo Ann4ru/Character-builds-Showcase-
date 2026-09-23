@@ -78,7 +78,7 @@ function Characters() {
                         <Alert>No characters found</Alert>
                     )}
 
-                    <Row className="g-4">
+                    <Row className="g-4 justify-content-center">
                         {!loading && !err &&
                             // map() goes through every item of the visible array
                             // For each element it creates a character (card)
