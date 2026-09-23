@@ -50,12 +50,12 @@ function Characters() {
                 <p>{`${visible.length} of ${allCharacters.length} characters`}</p>
             </div>
 
-            <Row>
-                <Col md={3}>
-                    <FilterPanel filters={filters} onChange={setFilters} enums={db.enums} />
-                </Col>
+            <Row className="justify-content-center">
+                <Col xs={12}>
+                    <div className="d-flex justify-content-start mb-3">
+                        <FilterPanel filters={filters} onChange={setFilters} enums={db.enums} />
+                    </div>
 
-                <Col md={9}>
                     <SearchBar
                         searchText={searchText}
                         setSearchText={setSearchText}
